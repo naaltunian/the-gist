@@ -1,20 +1,21 @@
 import React from 'react';
+import Form from './Form';
 
 class Summary extends React.Component {
   render(){
     return (
       <div>
-        <div class="form-group">
+        <div className="form-group">
 
-          <label for="exampleFormControlTextarea1">Here's the Gist</label>
+          <label htmlFor="exampleFormControlTextarea1">Here's the Gist</label>
 
-          <section class="form-control" id="exampleFormControlTextarea1" rows="3"></section>
+          <section className="form-control" id="exampleFormControlTextarea1" rows="3"></section>
         </div>
 
 
-        <div class="summary">
+        <div className="summary">
           <section>
-
+            
           </section>
         </div>
     </div>
