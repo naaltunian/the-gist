@@ -15,7 +15,7 @@ textapi.summarize({
     sentences_number: 8,
     //summarize based off percentage of article
     sentences_percentage: 10
-  }, 
+  },
     //check for errors
   function(error, response) {
     if (error === null) {
