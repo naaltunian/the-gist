@@ -11,6 +11,8 @@ let textapi = new AYLIENTextAPI({
 });
 
 class Form extends React.Component {
+
+
   Fetchinfo(fetchUrl){
     textapi.summarize({
       url: fetchUrl,
@@ -25,6 +27,12 @@ class Form extends React.Component {
       }
     });
   }
+
+
+  testAPI(){
+    
+  }
+
 handleSubmit = (e) => {
   if(e) e.preventDefault();
   const name = this.Fetchinfo(this.refs.url.value);
