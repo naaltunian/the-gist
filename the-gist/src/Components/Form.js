@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 const APPLICATION_KEY = '64cf462d71cdd6fd69487f59533cb5bc';
 const APPLICATION_ID = '14c0b7bd';
@@ -11,6 +12,10 @@ let textapi = new AYLIENTextAPI({
 });
 
 class Form extends React.Component {
+
+  constructor(){
+    super()
+  }
 
 
   Fetchinfo(fetchUrl){
@@ -30,7 +35,7 @@ class Form extends React.Component {
 
 
   testAPI(){
-    
+
   }
 
 handleSubmit = (e) => {
