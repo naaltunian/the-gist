@@ -4,7 +4,7 @@ import Form from './Form';
 class Summary extends React.Component {
   render() {
     return (
-      <div>
+      <div id="display" className="display">
         <div className="form-group">
           <label htmlFor="exampleFormControlTextarea1">Here's the Gist</label>
 
