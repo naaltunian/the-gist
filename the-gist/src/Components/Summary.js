@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './Form';
+
 
 class Summary extends React.Component {
   render() {
