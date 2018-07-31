@@ -11,7 +11,7 @@ let textapi = new AYLIENTextAPI({
 });
 
 class Form extends React.Component {
-  
+
   Fetchinfo(fetchUrl){
     textapi.summarize({
     url: fetchUrl,
@@ -19,11 +19,13 @@ class Form extends React.Component {
     },
     (error, response) => {
       if (error === null) {
+        let display = document.getElementById('display');
+        display.classList.remove('display');
         this.props.updateSentences(response.sentences);
       }
     });
   }
-  
+
   handleSubmit = (e) => {
     if(e) e.preventDefault();
     this.Fetchinfo(this.refs.url.value);
@@ -38,7 +40,7 @@ class Form extends React.Component {
           <input className="userinput" type="text" ref="url" placeholder="article url here" />
           <br />
             {/* {this.Fetchinfo()} */}
-          <input type="Submit" />
+          <input className="btn btn-md btn-primary m-2" type="Submit" />
         </form>
       </div>
     )

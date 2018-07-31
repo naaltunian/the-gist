@@ -14,3 +14,7 @@ body{
   input{
     text-align: center;
   }
+
+.display {
+  display: none;
+}
