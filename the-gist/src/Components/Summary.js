@@ -15,7 +15,7 @@ class Summary extends React.Component {
 
         <div className="summary">
           <section>
-            
+            <h1>{this.props.sentences}</h1>
           </section>
         </div>
     </div>
