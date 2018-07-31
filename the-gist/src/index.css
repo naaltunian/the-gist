@@ -18,3 +18,9 @@ body{
 .display {
   display: none;
 }
+
+#instructions {
+  width: 50%;
+  margin:auto;
+  margin-top: 2rem;
+}

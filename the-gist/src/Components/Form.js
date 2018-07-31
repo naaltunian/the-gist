@@ -19,6 +19,8 @@ class Form extends React.Component {
     },
     (error, response) => {
       if (error === null) {
+        let instructions = document.getElementById('instructions');
+        instructions.classList.add('display');
         let display = document.getElementById('display');
         display.classList.remove('display');
         this.props.updateSentences(response.sentences);
