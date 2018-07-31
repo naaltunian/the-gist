@@ -11,37 +11,35 @@ let textapi = new AYLIENTextAPI({
 });
 
 class Form extends React.Component {
+  
   Fetchinfo(fetchUrl){
     textapi.summarize({
-      url: fetchUrl,
-
-    sentences_percentage: 10
+    url: fetchUrl,
+    sentences_number: 8
     },
-    function(error, response) {
+    (error, response) => {
       if (error === null) {
-        response.sentences.forEach(function(s) {
-          console.log(s);
-        });
+        this.props.updateSentences(response.sentences);
       }
     });
   }
-handleSubmit = (e) => {
-  if(e) e.preventDefault();
-  const name = this.Fetchinfo(this.refs.url.value);
-  name;
-}
+  
+  handleSubmit = (e) => {
+    if(e) e.preventDefault();
+    this.Fetchinfo(this.refs.url.value);
+    // const name = this.Fetchinfo(this.refs.url.value);
+    // return this.Fetchinfo();
+  }
 
   render(){
     return (
       <div className="form">
-
-        <form onSubmit= {this.Fetchinfo.bind(this)} >
+        <form onSubmit= {this.handleSubmit} >
           <input className="userinput" type="text" ref="url" placeholder="article url here" />
           <br />
-            {this.Fetchinfo()}
-          <input onClick={this.handleSubmit} type="Submit" />
+            {/* {this.Fetchinfo()} */}
+          <input type="Submit" />
         </form>
-
       </div>
     )
   }

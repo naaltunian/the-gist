@@ -7,16 +7,24 @@ import Header from './Header.js';
 
 class App extends React.Component {
 
-  state = {
-    summaryBox: ""
+  constructor() {
+    super();
+    this.state = {
+      sentences: []
+    }
+    this.updateSentences = this.updateSentences.bind(this);
+  }
+
+  updateSentences(sentences) {
+    this.setState({sentences: sentences});
   }
 
   render(){
     return (
       <div>
         <Header />
-        <Form />
-        <Summary />
+        <Form updateSentences={this.updateSentences}/>
+        <Summary sentences={this.state.sentences}/>
       </div>
     )
   }
