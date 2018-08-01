@@ -1,31 +1,30 @@
 import React from 'react';
-
-const APPLICATION_KEY = '64cf462d71cdd6fd69487f59533cb5bc';
-const APPLICATION_ID = '14c0b7bd';
-
-let AYLIENTextAPI = require('aylien_textapi');
-let textapi = new AYLIENTextAPI({
-  application_id: APPLICATION_ID,
-  application_key: APPLICATION_KEY,
-  mode: 'no-cors'
-});
+import axios from 'axios';
 
 class Form extends React.Component {
 
-  Fetchinfo(fetchUrl){
-    textapi.summarize({
-    url: fetchUrl,
-    sentences_number: 8
-    },
-    (error, response) => {
-      if (error === null) {
-        let instructions = document.getElementById('instructions');
-        instructions.classList.add('display');
-        let display = document.getElementById('display');
-        display.classList.remove('display');
-        this.props.updateSentences(response.sentences);
-      }
-    });
+  async Fetchinfo(fetchUrl){
+
+    let {data} = await axios.get('/summarize?url='+fetchUrl).catch(e => console.log(e));
+    let instructions = document.getElementById('instructions');
+    instructions.classList.add('display');
+    let display = document.getElementById('display');
+    display.classList.remove('display');
+    this.props.updateSentences(data);
+
+    // textapi.summarize({
+    // url: fetchUrl,
+    // sentences_number: 8
+    // },
+    // (error, response) => {
+    //   if (error === null) {
+    //     let instructions = document.getElementById('instructions');
+    //     instructions.classList.add('display');
+    //     let display = document.getElementById('display');
+    //     display.classList.remove('display');
+    //     this.props.updateSentences(response.sentences);
+    //   }
+    // });
   }
 
   handleSubmit = (e) => {
