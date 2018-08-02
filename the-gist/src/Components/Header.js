@@ -7,9 +7,9 @@ class Header extends React.Component {
   render(){
     return (
       <div>
-        
 
-        <h1>The Gist</h1>
+
+        <h1 className="title-size"><em>The Gist</em></h1>
 
           <a target="_blank" href="https://www.cnn.com"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC-sFWTRZS3JA7U9FqqkWd8Qjwvw7lnot41wlK7noHn4w0OGjm" /></a>
 

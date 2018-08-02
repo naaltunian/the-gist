@@ -7,6 +7,13 @@ body{
     text-align: center;
 
   }
+
+  .form-control {
+    padding-top: 1rem;
+    padding-right: 2.5rem;
+    padding-bottom: 1rem;
+    padding-left: 2.5rem;
+  }
   .userinput {
     margin-top: 1%;
     width: 25rem;
@@ -25,13 +32,17 @@ body{
   display: none;
 }
 
+label {
+  font-size: 2rem;
+}
+
 #instructions {
   font-family: monospace;
 letter-spacing: .15em;
 margin: 0 auto;
  overflow: auto;
  white-space: no-wrap;
- border-right: .15em solid orange;
+ /* border-right: .15em solid orange; */
 
  animation:
     typing 3.5s steps(40, end),
@@ -41,10 +52,10 @@ margin: 0 auto;
   from { width: 0 }
   to { width: 100% }
 }
-@keyframes blinking-cursor {
+/* @keyframes blinking-cursor {
   from, to { border-color: transparent }
   50% { border-color: orange }
-}
+} */
 
 
 img {
@@ -130,4 +141,8 @@ img {
 /* Show the dropdown menu on hover */
 .dropdown:hover, .dropdown-content {
   display: block;
+}
+
+.title-size{
+  font-size: 5rem;
 }

@@ -15,8 +15,11 @@ class Summary extends React.Component {
           <section
             className="form-control"
             id="exampleFormControlTextarea1"
+            id="instructions"
+
             rows="3"
           >
+
             {this.props.sentences}
           </section>
         </div>
