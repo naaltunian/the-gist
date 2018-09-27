@@ -4,34 +4,17 @@ import axios from 'axios';
 class Form extends React.Component {
 
   async Fetchinfo(fetchUrl){
-
     let {data} = await axios.get('/summarize?url='+fetchUrl).catch(e => console.log(e));
     let instructions = document.getElementById('instructions');
     instructions.classList.add('display');
     let display = document.getElementById('display');
     display.classList.remove('display');
     this.props.updateSentences(data);
-
-    // textapi.summarize({
-    // url: fetchUrl,
-    // sentences_number: 8
-    // },
-    // (error, response) => {
-    //   if (error === null) {
-    //     let instructions = document.getElementById('instructions');
-    //     instructions.classList.add('display');
-    //     let display = document.getElementById('display');
-    //     display.classList.remove('display');
-    //     this.props.updateSentences(response.sentences);
-    //   }
-    // });
   }
 
   handleSubmit = (e) => {
     if(e) e.preventDefault();
     this.Fetchinfo(this.refs.url.value);
-    // const name = this.Fetchinfo(this.refs.url.value);
-    // return this.Fetchinfo();
   }
 
   render(){
@@ -40,7 +23,7 @@ class Form extends React.Component {
         <form onSubmit= {this.handleSubmit} >
           <input className="userinput" type="text" ref="url" placeholder="article url here" />
           <br />
-            {/* {this.Fetchinfo()} */}
+            
           <input className="btn btn-md btn-primary m-2" type="Submit" />
         </form>
       </div>
