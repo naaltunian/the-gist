@@ -12,11 +12,10 @@ class Summary extends React.Component {
           <label htmlFor="exampleFormControlTextarea1">Here's the Gist</label>
           <section
             className="form-control"
-            id="exampleFormControlTextarea1"
             id="instructions"
             rows="3"
           >
-            {this.props.sentences}
+            {this.props.summary}
           </section>
         </div>
         <div className="summary" />

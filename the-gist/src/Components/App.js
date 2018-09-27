@@ -16,7 +16,6 @@ class App extends React.Component {
 
   updateSentences(sentences) {
     this.setState({sentences: sentences});
-
   }
 
   render(){
@@ -24,7 +23,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Form updateSentences={this.updateSentences}/>
-        <Summary sentences={this.state.sentences}/>
+        <Summary summary={this.state.sentences}/>
       </div>
     )
   }

@@ -23,7 +23,6 @@ class Form extends React.Component {
         <form onSubmit= {this.handleSubmit} >
           <input className="userinput" type="text" ref="url" placeholder="article url here" />
           <br />
-            
           <input className="btn btn-md btn-primary m-2" type="Submit" />
         </form>
       </div>
