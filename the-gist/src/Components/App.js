@@ -1,7 +1,6 @@
 import React from 'react';
 import Form from './Form.js';
 import Summary from './Summary.js';
-import Footer from './Footer.js';
 import Header from './Header.js';
 // import 'bootstrap/dist/css/bootstrap.css';
 
@@ -17,7 +16,6 @@ class App extends React.Component {
 
   updateSentences(sentences) {
     this.setState({sentences: sentences});
-
   }
 
   render(){
@@ -25,7 +23,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Form updateSentences={this.updateSentences}/>
-        <Summary sentences={this.state.sentences}/>
+        <Summary summary={this.state.sentences}/>
       </div>
     )
   }
